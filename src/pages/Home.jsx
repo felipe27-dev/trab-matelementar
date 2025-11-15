@@ -54,26 +54,8 @@ function Home() {
                         </p>
                     }
                     backgroundColor={"white"}
-                    altText="Circulo Trigonométrico"
-                    captionText="Clique para ver mais"
-                    containerHeight="150px"
-                    containerWidth="150px"
-                    imageHeight="150px"
-                    imageWidth="200px"
-                    rotateAmplitude={12}
-                    scaleOnHover={1.2}
-                    showMobileWarning={false}
-                    showTooltip={true}
-                    displayOverlayContent={true}
-                    />
-                    <TiltedCard
-                    overlayContent={
-                        <p className="text-center justify-center align-middle font-bold text-2xl">
-                            Razões Trigonométricas
-                        </p>
-                    }
-                    backgroundColor={"white"}
-                    altText="Circulo Trigonométrico"
+                    altText="Calculadora Trigonométrica"
+                    navigateTo={'/calculadora-trigonometrica'}
                     captionText="Clique para ver mais"
                     containerHeight="150px"
                     containerWidth="150px"
