@@ -2,8 +2,10 @@
 import { TextField } from "@mui/material";
 import Chart from "../components/Chart";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function GraphPage() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     seno: "",
     cosseno: "",
@@ -136,7 +138,8 @@ function GraphPage() {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center bg-[#2e3f91] gap-y-8 pt-12">
-      <h1 className="text-4xl text-white font-bold">Criação de Gráficos</h1>
+      <span className="absolute top-3 left-3 text-white font-medium cursor-pointer text-lg bg-[#2e3f91] z-20 hover:underline" onClick={() => navigate('/')}>{"<- Voltar"}</span>
+      <h1 className="text-4xl text-white font-bold" style={{marginTop: '40px'}}>Criação de Gráficos</h1>
       <h3 className="text-2xl text-white font-bold">Insira os valores das funções</h3>
 
       <div className="flex flex-row gap-6 mt-4">
@@ -166,7 +169,7 @@ function GraphPage() {
         />
       </div>
 
-      <div className="flex flex-col items-center gap-10 mt-8">
+      <div className="flex flex-col items-center gap-10 mt-8" style={{marginBottom: '40px'}}>
         <Chart data={dataSeno} referenceDots={refDotsSeno} tipo="seno" />
         <Chart data={dataCosseno} referenceDots={refDotsCosseno} tipo="cosseno" />
         <Chart data={dataTangente} referenceDots={refDotsTangente} tipo="tangente" />

@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 
@@ -8,6 +9,7 @@ function CirclePage() {
   const [pointStop, setPointStop] = useState(false);
   const [quadrant, setQuadrant] = useState(0);
   const [anglePoint, setAnglePoint] = useState(0);
+  const navigate = useNavigate();
   const circleRef = useRef(null);
 
   const pointSize = 12;
@@ -95,8 +97,9 @@ function CirclePage() {
 
   return (
     <>
-      <div className="w-full min-h-screen flex justify-start gap-5  flex-col items-center bg-[#2e3f91] ">
-        <h1 className="text-4xl text-white font-bold mt-10">Círculo Trigonométrico</h1>
+      <div className="w-full min-h-screen flex justify-start gap-5 gap-y-8 flex-col items-center bg-[#2e3f91]" >
+        <span className="absolute top-3 left-3 text-white font-medium cursor-pointer text-lg bg-[#2e3f91] z-20 hover:underline" onClick={() => navigate('/')}>{"<- Voltar"}</span>
+        <h1 className="text-4xl text-white font-bold mt-10" style={{marginTop: '40px'}}>Círculo Trigonométrico</h1>
         <h3 className="text-lg text-white font-bold">Clique para fixar o ponto</h3>
         <div className="relative">
           <div
@@ -260,7 +263,7 @@ function CirclePage() {
 
         {/* Resultados */}
         <h1 className="text-4xl text-white font-bold mt-4">Resultados</h1>
-        <div className="flex flex-row justify-center items-center flex-rows-3 gap-2">
+        <div className="flex flex-row justify-center items-center flex-rows-3 gap-2" style={{marginBottom: '40px'}}>
           <h3 className="text-xl text-white font-bold">
             <Checkbox checked={ratios.tangente} onChange={() =>{setRatios({...ratios, tangente: !ratios.tangente})}}
             sx={{
